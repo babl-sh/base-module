@@ -1,5 +1,6 @@
 #!/bin/sh
 
+name=
 if [ -t 0 ]; then
   name=World
 else
