@@ -1,10 +1,10 @@
 #!/bin/sh
 
-name=
-if [ -t 0 ]; then
-  name=World
-else
+if [ ! -t 0 ]; then
   read name
+  if [ -z $name ]; then
+    unset name
+  fi
 fi
 
-echo Hello $name
+echo Hello ${name-World}
